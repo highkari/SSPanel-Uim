@@ -486,9 +486,9 @@ table tr td:first-child {
                                                 </p>
                                                 <p>
                                                     2、一键导入配置：
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clashr'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
                                                     .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clashr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
 
                                                 </p>
                                                 <p> 3、导入后启动代理即可</p>
