@@ -73,6 +73,8 @@ $_ENV['reg_auto_reset_day']        = 0;                         //注册时的�
 $_ENV['reg_auto_reset_bandwidth']  = 0;                         //需要重置的流量，0为不重置
 $_ENV['random_group']              = '0';                       //注册时随机分组，注册时随机分配到的分组，多个分组请用英文半角逗号分隔
 
+$_ENV['enable_reg_im']             = true;                      //注册时是否要求用户输入IM联系方式
+
 $_ENV['reg_forbidden_ip']          = '127.0.0.0/8,::1/128';     //注册时默认禁止访问IP列表，半角英文逗号分割
 $_ENV['min_port']                  = 10000;                     //用户端口池最小值
 $_ENV['max_port']                  = 65535;                     //用户端口池最大值
@@ -249,7 +251,7 @@ $_ENV['mylivechat_id']        = '';      //客服系统ID，注册地址 https:/
 $_ENV['crisp_id']             = '';      //客服系统ID，注册地址 https://crisp.chat/en/
 $_ENV['tawk_id']              = '';      //客服系统ID，注册地址 https://tawk.to/
 
-# PushBear  基于微信模板的向关注了二维码的用户以微信方式推送消息 https://pushbear.ftqq.com/，目前仅用户推送新公告
+# PushBear 基于微信模板的向关注了二维码的用户以微信方式推送消息 https://pushbear.ftqq.com/，目前仅用户推送新公告
 $_ENV['usePushBear']          = false;
 $_ENV['PushBear_sendkey']     = '';       //请填写您在PushBear获取的sendkey，请仔细检查勿粘贴错
 
@@ -257,7 +259,7 @@ $_ENV['PushBear_sendkey']     = '';       //请填写您在PushBear获取的send
 $_ENV['enable_ticket']        = true;        //是否开启工单系统
 $_ENV['mail_ticket']          = true;        //是否开启工单邮件提醒
 
-# Server酱  用户提交新工单或者回复工单时用微信提醒机场主 http://sc.ftqq.com/
+# Server酱 用户提交新工单或者回复工单时用微信提醒机场主 https://sct.ftqq.com/
 $_ENV['useScFtqq']            = false;        //是否开启工单Server酱提醒
 $_ENV['ScFtqq_SCKEY']         = '';           //请填写您在Server酱获取的SCKEY  请仔细检查勿粘贴错
 
@@ -465,13 +467,9 @@ $_ENV['enable_login_bind_ip']   = false;        //是否将登陆线程和IP绑�
 $_ENV['rememberMeDuration']     = 7;           //登录时记住账号时长天数
 $_ENV['Speedtest_duration']     = 6;           //显示多长时间的测速记录
 
-$_ENV['login_warn']             = false;                  //异地登陆提示
 $_ENV['timeZone']               = 'PRC';                 //PRC 天朝时间  UTC 格林时间
 $_ENV['theme']                  = 'material';            //默认主题
 $_ENV['jump_delay']             = 1200;                  //跳转延时，单位ms，不建议太长
-
-$_ENV['pacp_offset']            = -20000;              //VPN 端口偏移
-$_ENV['pacpp_offset']           = -20000;
 
 $_ENV['checkNodeIp']            = true;                 //是否webapi验证节点ip
 $_ENV['muKeyList']              = [];                   //多 key 列表
@@ -488,14 +486,6 @@ $_ENV['redis_host']             = '127.0.0.1';
 $_ENV['redis_port']             = 6379;
 $_ENV['redis_database']         = '';
 $_ENV['redis_password']         = '';
-
-#Radius设置
-$_ENV['enable_radius']          = false;            //是否开启Radius
-$_ENV['radius_db_host']         = '';               //以下4项为Radius数据库设置
-$_ENV['radius_db_database']     = '';
-$_ENV['radius_db_user']         = '';
-$_ENV['radius_db_password']     = '';
-$_ENV['radius_secret']          = '';               //Radius连接密钥
 
 #Cloudflare
 $_ENV['cloudflare_enable']      = false;         //是否开启 Cloudflare 解析

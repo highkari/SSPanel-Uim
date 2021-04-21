@@ -44,6 +44,19 @@ class ClientDownload extends Command
         //     ],
         // ],
         [
+            'name'      => 'ShadowsocksrC#',
+            'tagMethod' => 'github_release',
+            'gitRepo'   => 'shadowsocksrr/shadowsocksr-csharp',
+            'savePath'  => 'public/clients/',
+            'downloads' => [
+                [
+                    'sourceName' => 'ShadowsocksR-win-%tagName%.zip',
+                    'saveName'   => 'ssr-win.zip',
+                    'apkpureUrl' => ''
+                ]
+            ],
+        ],
+        [
             'name'      => 'Netch',
             'tagMethod' => 'github_release',
             'gitRepo'   => 'netchx/Netch',
@@ -68,23 +81,15 @@ class ClientDownload extends Command
                     'apkpureUrl' => ''
                 ],
                 [
-                    'sourceName' => 'Clash.for.Windows-%tagName%-win.7z',
-                    'saveName'   => 'Clash-Windows.7z',
-                    'apkpureUrl' => ''
-                ]
-            ],
-        ],
-        [
-            'name'      => 'ShadowsocksWindows',
-            'tagMethod' => 'github_release',
-            'gitRepo'   => 'shadowsocks/shadowsocks-windows',
-            'savePath'  => 'public/clients/',
-            'downloads' => [
-                [
-                    'sourceName' => 'Shadowsocks-%tagName%.zip',
-                    'saveName'   => 'ss-win.zip',
+                    'sourceName' => 'Clash.for.Windows-%tagName%.dmg',
+                    'saveName'   => 'Clash-Windows.dmg',
                     'apkpureUrl' => ''
                 ],
+                [
+                    'sourceName' => 'Clash.for.Windows-%tagName%-arm64.dmg',
+                    'saveName'   => 'Clash-Windows-arm64.dmg',
+                    'apkpureUrl' => ''
+                ]
             ],
         ],
         [
@@ -127,6 +132,19 @@ class ClientDownload extends Command
             ],
         ],
         [
+            'name'      => 'ShadowsocksXNGR',
+            'tagMethod' => 'github_pre_release',
+            'gitRepo'   => 'qinyuhang/ShadowsocksX-NG-R',
+            'savePath'  => 'public/clients/',
+            'downloads' => [
+                [
+                    'sourceName' => 'ShadowsocksX-NG-R8.dmg',
+                    'saveName'   => 'ssr-mac.dmg',
+                    'apkpureUrl' => ''
+                ],
+            ],
+        ],
+        [
             'name'      => 'V2RayNG',
             'tagMethod' => 'github_release',
             'gitRepo'   => '2dust/v2rayNG',
@@ -150,6 +168,29 @@ class ClientDownload extends Command
                 [
                     'sourceName' => 'v2rayNG_%tagName%_x86_64.apk',
                     'saveName'   => 'v2rayng_x86_64.apk',
+                    'apkpureUrl' => ''
+                ],
+            ],
+        ],
+        [
+            'name'      => 'Qv2ray',
+            'tagMethod' => 'github_release',
+            'gitRepo'   => 'Qv2ray/Qv2ray',
+            'savePath'  => 'public/clients/',
+            'downloads' => [
+                [
+                    'sourceName' => 'Qv2ray.%tagName%.Windows-x64.7z',
+                    'saveName'   => 'Qv2ray.7z',
+                    'apkpureUrl' => ''
+                ],
+                [
+                    'sourceName' => 'Qv2ray-%tagName%.macOS-x64.dmg',
+                    'saveName'   => 'Qv2ray.dmg',
+                    'apkpureUrl' => ''
+                ],
+                [
+                    'sourceName' => 'Qv2ray.%tagName%.linux-x64.AppImage',
+                    'saveName'   => 'Qv2ray.AppImage',
                     'apkpureUrl' => ''
                 ],
             ],
@@ -202,6 +243,19 @@ class ClientDownload extends Command
                 [
                     'sourceName' => 'shadowsocksr-android-%tagName%.apk',
                     'saveName'   => 'ssrr-android.apk',
+                    'apkpureUrl' => ''
+                ],
+            ],
+        ],
+        [
+            'name'      => 'ElectronSSR',
+            'tagMethod' => 'github_pre_release',
+            'gitRepo'   => 'shadowsocksrr/electron-ssr',
+            'savePath'  => 'public/clients/',
+            'downloads' => [
+                [
+                    'sourceName' => 'electron-ssr-%tagName%.AppImage',
+                    'saveName'   => 'Electron-SSR.AppImage',
                     'apkpureUrl' => ''
                 ],
             ],
