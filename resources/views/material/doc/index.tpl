@@ -28,7 +28,7 @@
       alias: {
             '/.*/_sidebar.md': '/_sidebar.md'
       },
-      basePath: '{if $config['remote_documents'] === true}{$config['documents_source']}{else}/docs/SSPanel{/if}',
+      basePath: '{if $config['remote_documents'] === true}{$config['documents_source']}{else}/doc/{/if}',
       auto2top: true,
       loadSidebar: true,
       autoHeader: true,
