@@ -100,7 +100,7 @@
                         <li>
                             <a href="/user/node"><i class="icon icon-lg">airplanemode_active</i>&nbsp;节点列表</a>
                         </li>
-{*                        <li>
+                        <li>
                             <a href="/user/lookingglass"><i class="icon icon-lg">visibility</i>&nbsp;延迟检测</a>
                         </li>
                         <li>

@@ -384,16 +384,16 @@ table tr td:first-child {
                                                 {*   <p><span class="icon icon-lg text-white">filter_1</span> Clash for Windows：</p>*}
                                                 <p>
                                                     1、安装Clash for Windows：
-                                                    <a class="btn-dl" target="_blank" href="https://sabrinathings.lanzous.com/iJFGQm7l21i"><i class="material-icons icon-sm">cloud_download</i>在线下载</a>
+                                                    <a class="btn-dl" target="_blank" href="https://sabrinathings.lanzous.com/inlYQo5q89c"><i class="material-icons icon-sm">cloud_download</i>在线下载</a>
                                                     <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Windows/Clash{/if}"><i
                                                                 class="material-icons
                                                          icon-sm">turned_in_not</i> 图文教程</a>
                                                 </p>
                                                 <p>
                                                     2、一键导入配置：
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clashr'])}"><i class="material-icons icon-sm">send</i> 配置一键导入</a>
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 配置一键导入</a>
                                                     .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clashr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
 
                                                 </p>
                                                 <p> 3、导入后启动系统代理即可</p>
@@ -414,9 +414,9 @@ table tr td:first-child {
                                                 <p>
                                                     2、一键导入配置：
 
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clashr'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
                                                     .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clashr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
 
                                                 </p>
                                                 {if array_key_exists('macOS',$config['userCenterClient'])}
@@ -486,9 +486,9 @@ table tr td:first-child {
                                                 </p>
                                                 <p>
                                                     2、一键导入配置：
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clashr'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
                                                     .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clashr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
 
                                                 </p>
                                                 <p> 3、导入后启动代理即可</p>
