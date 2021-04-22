@@ -59,7 +59,7 @@
 }
 .ui-switch div.switch-btn:first-of-type a:hover {
 	border-radius: 0 5px 5px 0;
-	transition-duration: 0.4s;	
+	transition-duration: 0.4s;
 }
 
 .ui-switch div.switch-btn:last-of-type a {
@@ -67,7 +67,7 @@
 }
 .ui-switch div.switch-btn:last-of-type a:hover {
 	border-radius: 5px 0 0 5px;
-	transition-duration: 0.4s;	
+	transition-duration: 0.4s;
 }
 
 .ui-switch a:hover {
@@ -165,7 +165,7 @@
     transition: .3s all;
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto;
-    grid-template-areas: 
+    grid-template-areas:
     "main"
     "drop"
     "button"
@@ -195,8 +195,8 @@
     padding: .4em 0;
 }
 .shop-price {
-	color: #3b5473;
-	font-size: 2.75rem;
+	color: rgb(242 11 19);
+	font-size: 2.0rem;
 }
 .shop-price code {
 	font-size: 24px;
@@ -204,7 +204,7 @@
 	font-style: italic;
 	color: #ffa100;
 }
- 
+
 .shop-content>div {
     margin-top: .6em;
     flex-basis: 49%;
@@ -281,17 +281,21 @@
 
 .shop-content-extra {
     margin-top: 1.5em;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
 }
 .shop-content-extra>div {
     margin-top: .4em;
     letter-spacing: 2px;
+    text-align: left;
     position: relative;
-    right: .3em;
+    margin-left: 17%;
+    width: 70%;
     min-height: 20px;
+    font-weight: bold;
 }
 
 .shop-btn {
+    background:rgb(0,0,0);
 	margin-top: 3em;
 	padding: 10px 2em;
 	flex-basis: 70%;
@@ -341,7 +345,7 @@
     .shop-table .card-tag,.shop-table span {
         flex-basis: 40%;
         text-align: center;
-        margin: 5px 8px 0 0; 
+        margin: 5px 8px 0 0;
     }
     .shop-table .shop-name {
         flex-basis: 100%;
@@ -1105,7 +1109,7 @@ div.nodetitle:first-of-type>a {
 .user-info .nodename {
     font-size: 13px;
     text-transform: uppercase;
-    color: #8898aa; 
+    color: #8898aa;
     font-weight: 600;
 }
 .user-info .nodemiddle {
@@ -1326,12 +1330,12 @@ a.tag-magenta,.tag-magenta {
     .shop-table .card>div:last-of-type {
         flex-basis: 2%;
     }
-   
+
     .shop-gridarea {
         width: 100%;
         grid-template-columns: 80% 20%;
         grid-template-rows: auto auto;
-        grid-template-areas: 
+        grid-template-areas:
         "main button"
         "drop block"
     }

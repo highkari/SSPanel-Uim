@@ -56,7 +56,12 @@
                         <div class="card">
                             <div class="card-main">
                                 <div class="shop-name">{$shop->name}</div>
-                                <div class="shop-price">{$shop->price}</div>
+                                <div class="shop-price">
+                                    {if strpos($shop->name,'限时') !== false}
+                                        <span style="text-decoration: line-through;font-size: 0.8em;color: #9a9a9a" > {$shop->price * 1.1}</span>
+                                    {/if}
+                                    <span>{$shop->price}</span>
+                                </div>
                                 <div class="shop-tat">
                                     <span>{$shop->bandwidth()}</span> / <span>{$shop->class_expire()}</span>
                                 </div>
@@ -90,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="shop-content">
+{*                                <div class="shop-content">
                                     <div class="shop-content-left">账号有效期:</div>
                                     <div class="shop-content-right">{$shop->expire()}<span>天</span></div>
                                     <div class="shop-content-left">重置周期:</div>
@@ -103,7 +108,7 @@
                                             / {$shop->reset()}
                                             <span>天</span>
                                         {/if}</div>
-                                </div>
+                                </div>*}
                                 <div class="shop-content-extra">
                                     {foreach $shop->content_extra() as $service}
                                         <div><span class="icon">{$service[0]}</span> {$service[1]}</div>

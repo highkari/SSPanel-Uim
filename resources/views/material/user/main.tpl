@@ -101,16 +101,13 @@
                             <a href="/user/node"><i class="icon icon-lg">airplanemode_active</i>&nbsp;节点列表</a>
                         </li>
                         <li>
-                            <a href="/user/relay"><i class="icon icon-lg">compare_arrows</i>&nbsp;中转规则</a>
-                        </li>
-                        <li>
                             <a href="/user/lookingglass"><i class="icon icon-lg">visibility</i>&nbsp;延迟检测</a>
                         </li>
                         <li>
                             <a href="/user/announcement"><i class="icon icon-lg">announcement</i>&nbsp;网站公告</a>
                         </li>
                         <li>
-                            <a href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/{/if}"><i class="icon icon-lg">start</i>&nbsp;使用教程</a>
+                            <a target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/{/if}"><i class="icon icon-lg">start</i>&nbsp;使用教程</a>
                         </li>
                     </ul>
                     <a class="waves-attach" data-toggle="collapse" href="#ui_menu_detect">审计</a>
