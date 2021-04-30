@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>页面不存在 - 浣溪沙</title>
+<link href="/theme/assets/home/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/theme/assets/home/css/bimoe.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+<p class="text-center" style="font-weight: 900;font-size: 120px;line-height: 5;">404</p>
+<p class="text-center"><a href="javascript:history.go(-1)">返回上一页</a></p>
+</div>
+<script type="78577516c5875330a139af3e-text/javascript" src="/theme/assets/home/js/jquery.min.js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="78577516c5875330a139af3e-|49" defer=""></script></body>
+</html>

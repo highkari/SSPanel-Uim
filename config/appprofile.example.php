@@ -262,8 +262,8 @@ $_ENV['Clash_Profiles'] = [
                 'tcp://223.5.5.5'
             ],
             'fallback'=>[
-                'tls://223.5.5.5:853',
-                'https://223.5.5.5/dns-query'
+                'tls://dns.alidns.com:853',
+                'https://dns.alidns.com/dns-query'
             ],
             'fallback-filter'=>[
                 'geoip'=> true,
