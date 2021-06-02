@@ -20,7 +20,356 @@ table tr td:first-child {
     </div>
     <div class="container">
         <section class="content-inner margin-top-no">
+            <div class="ui-card-wrap">
+                <div class="col-xx-12 col-sm-12">
+                    <div class="card quickadd">
+                        <div class="card-main">
+                            <div class="card-inner">
+                                <div class="cardbtn-edit">
+                                    <div class="card-heading"><i class="icon icon-md">phonelink</i> 快速使用</div>
+                                </div>
+                                {*                                <nav class="tab-nav margin-top-no">
+                                                                    <ul class="nav nav-list">
+                                                                        <li class="active">
+                                                                            <a class="" data-toggle="tab" href="#sub_center"><i class="icon icon-lg">info_outline</i>&nbsp;订阅中心</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="" data-toggle="tab" href="#info_center"><i class="icon icon-lg">flight_takeoff</i>&nbsp;连接信息</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>*}
+                                <div class="card-inner">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade" id="info_center">
+                                            <p>您的链接信息：</p>
+                                            {if URL::SSRCanConnect($user)}
+                                                {$user = URL::getSSRConnectInfo($pre_user)}
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><strong>端口</strong></td>
+                                                        <td>{$user->port}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>密码</strong></td>
+                                                        <td>{$user->passwd}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义加密</strong></td>
+                                                        <td>{$user->method}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义协议</strong></td>
+                                                        <td>{$user->protocol}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义混淆</strong></td>
+                                                        <td>{$user->obfs}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义混淆参数</strong></td>
+                                                        <td>{$user->obfs_param}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <hr/>
+                                                <p>您好，您目前的 加密方式，混淆或协议 适用于 SSR 客户端，请您选用支持 SSR 的客户端来连接，或者到 <a href="/user/edit">资料编辑</a> 页面修改后再来查看此处。</p>
+                                                <p>同时, ShadowsocksR 单端口多用户的连接不受您设置的影响，您可以在此使用相应的客户端进行连接</p>
+                                            {elseif URL::SSCanConnect($user)}
+                                                {$user = URL::getSSConnectInfo($pre_user)}
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><strong>端口</strong></td>
+                                                        <td>{$user->port}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>密码</strong></td>
+                                                        <td>{$user->passwd}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义加密</strong></td>
+                                                        <td>{$user->method}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义混淆</strong></td>
+                                                        <td>{$user->obfs}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>自定义混淆参数</strong></td>
+                                                        <td>{$user->obfs_param}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <hr/>
+                                                <p>您好，您目前的 加密方式，混淆或协议 适用于 SS 客户端，请您选用支持 SS 协议的客户端来连接，或者到 <a href="/user/edit">资料编辑</a> 页面修改后再来查看此处。</p>
+                                                <p>同时, Shadowsocks 单端口多用户的连接不受您设置的影响，您可以在此使用相应的客户端进行连接</p>
+                                            {else}
+                                                <p>您的账户连接信息存在异常，请联系管理员</p>
+                                            {/if}
+                                        </div>
+                                        <div class="tab-pane fade active in" id="sub_center">
+                                            <nav class="tab-nav margin-top-no">
+                                                <ul class="nav nav-list">
+                                                    <li class="active">
+                                                        <a class="" data-toggle="tab" href="#sub_center_general"><i class="icon icon-lg">touch_app</i>&nbsp;新手必看</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="" data-toggle="tab" href="#sub_center_windows"><i class="icon icon-lg">desktop_windows</i>&nbsp;Windows</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="" data-toggle="tab" href="#sub_center_mac"><i class="icon icon-lg">laptop_mac</i>&nbsp;macOS</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="" data-toggle="tab" href="#sub_center_ios"><i class="icon icon-lg">phone_iphone</i>&nbsp;iOS</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="" data-toggle="tab" href="#sub_center_android"><i class="icon icon-lg">android</i>&nbsp;Android</a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a class="" data-toggle="tab" href="#sub_center_other"><i class="icon icon-lg">star</i>&nbsp;其它</a>
+                                                    </li>
+                                                    {*                                                    <li>
+                                                                                                            <a class="" data-toggle="tab" href="#sub_center_linux"><i class="icon icon-lg">devices_other</i>&nbsp;Linux</a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="" data-toggle="tab" href="#sub_center_router"><i class="icon icon-lg">router</i>&nbsp;Router</a>
+                                                                                                        </li>*}
+                                                </ul>
+                                            </nav>
+                                            {function name=printClient items=null}
+                                                {foreach $items as $item}
+                                                    <hr/>
+                                                    <p><span class="icon icon-lg text-white">filter_9_plus</span> {$item['name']} - [ {$item['support']} ]：</p>
+                                                    <p>
+                                                        应用下载：
+                                                        {foreach $item['download_urls'] as $download_url}
+                                                            {if !$download_url@first}.{/if}
+                                                            <a class="btn-dl" href="{$download_url['url']}"><i class="material-icons icon-sm">cloud_download</i> {$download_url['name']}</a>
+                                                        {/foreach}
+                                                    </p>
+                                                    <p>
+                                                        使用教程：
+                                                        <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}{$item['tutorial_url']}{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
+                                                    </p>
+                                                    {if isset($item['description'])}
+                                                        <p>
+                                                            相关说明：
+                                                            {$item['description']}
+                                                        </p>
+                                                    {/if}
+                                                    <p>
+                                                        使用方式：
+                                                        {foreach $item['subscribe_urls'] as $subscribe_url}
+                                                            {if !$subscribe_url@first}.{/if}
+                                                            {$url=$subscribe_url['url']|replace:'%userUrl%':$subInfo['link']}
+                                                            {if $subscribe_url['type'] == 'href'}
+                                                                <a class="btn-dl" href="{$url}"><i class="material-icons icon-sm">send</i> {$subscribe_url['name']}</a>
+                                                            {else}
+                                                                <a class="copy-text btn-dl" data-clipboard-text="{$url}"><i class="material-icons icon-sm">send</i> {$subscribe_url['name']}</a>
+                                                            {/if}
+                                                        {/foreach}
+                                                    </p>
+                                                {/foreach}
+                                            {/function}
+                                            <div class="tab-pane fade active in" id="sub_center_general">
+                                                <p>1.下载并安装软件后，返回该页面，点击一键导入配置，在APP上启动代理即可。</p>
+                                                <p>2.账号VIP到期后，请到充值页面充值，要买哪种套餐就冲多少。</p> <a href="/user/code" class="card-tag tag-green">点我充值</a>
+                                                <p>3.购买套餐，充值完成后得去购买套餐，VIP服务才会生效。</p> <a href="/user/shop" class="card-tag tag-orange">点我购买套餐</a>
+                                                <p>4.请至多等待1分钟套餐生效。</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub_center_windows">
+                                                {*   <p><span class="icon icon-lg text-white">filter_1</span> Clash for Windows：</p>*}
+                                                <p>
+                                                    1、安装Clash for Windows：
+                                                    <a class="btn-dl" target="_blank" href="https://wws.lanzoui.com/iz28Xpa0pfa"><i class="material-icons icon-sm">cloud_download</i>在线下载</a>
+                                                    <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Windows/Clash{/if}"><i
+                                                                class="material-icons
+                                                         icon-sm">turned_in_not</i> 图文教程</a>
+                                                </p>
+                                                <p>
+                                                    2、一键导入配置：
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 配置一键导入</a>
+                                                    .
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
 
+                                                </p>
+                                                <p> 3、导入后启动系统代理即可</p>
+                                                <p> 提示：如果当中您有任何问题，请查看图文教程。</p>
+                                                {if array_key_exists('Windows',$config['userCenterClient'])}
+                                                    {if count($config['userCenterClient']['Windows']) != 0}
+                                                        {printClient items=$config['userCenterClient']['Windows']}
+                                                    {/if}
+                                                {/if}
+                                            </div>
+                                            <div class="tab-pane fade" id="sub_center_mac">
+                                                {*     <p><span class="icon icon-lg text-white">filter_1</span> ClashXR - [ SS/SSR/VMess ]：</p>*}
+                                                <p>
+                                                    1、安装Clash X for mac：
+                                                    <a class="btn-dl" target="_blank"  href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public"><i class="material-icons icon-sm">cloud_download</i> 在线下载</a>
+                                                    使用指导： <a class="btn-dl" target="_blank" href="/doc/#/Mac/ClashXpro" target="_blank"><i class="material-icons icon-sm">visibility</i> 图文教程</a>
+                                                </p>
+                                                <p>
+                                                    2、一键导入配置：
+
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
+                                                    .
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+
+                                                </p>
+                                                {if array_key_exists('macOS',$config['userCenterClient'])}
+                                                    {if count($config['userCenterClient']['macOS']) != 0}
+                                                        {printClient items=$config['userCenterClient']['macOS']}
+                                                    {/if}
+                                                {/if}
+                                            </div>
+                                            <div class="tab-pane fade" id="sub_center_ios">
+                                                {if $display_ios_class>=0}
+                                                    {if $user->class>=$display_ios_class && $user->get_top_up()>=$display_ios_topup}
+                                                        <div><span class="icon icon-lg text-white">account_box</span> 本站iOS账户：</div>
+                                                        <div class="float-clear">
+                                                            <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" name="input1" readonly value="{$ios_account}" readonly="true">
+                                                            <button class="copy-text btn btn-subscription col-xx-12 col-sm-3 col-lg-2" type="button" data-clipboard-text="{$ios_account}">点击复制</button>
+                                                            <br>
+                                                        </div>
+                                                        <div><span class="icon icon-lg text-white">lock</span> 本站iOS密码：</div>
+                                                        <div class="float-clear">
+                                                            <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" name="input1" readonly value="{$ios_password}" readonly="true">
+                                                            <button class="copy-text btn btn-subscription col-xx-12 col-sm-3 col-lg-2" type="button" data-clipboard-text="{$ios_password}">点击复制</button>
+                                                            <br>
+                                                        </div>
+                                                        <p><span class="icon icon-lg text-white">error</span><strong>禁止将账户分享给他人！</strong></p>
+                                                        <hr/>
+                                                    {/if}
+                                                {/if}
+
+                                                {* <p><span class="icon icon-lg text-white">filter_1</span> Shadowrocket - [ SS/SSR/VMess/Trojan ]：</p>*}
+                                                <p>
+                                                    1、苹果用户先按教程下载好Shadowrocket：
+                                                    <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/iOS/Shadowrocket{/if}"><i
+                                                                class="material-icons
+                                                            icon-sm">turned_in_not</i> 图文教程</a>
+                                                </p>
+                                                <p>
+                                                    2、一键导入小火箭：
+                                                    <a class="btn-dl" onclick=AddSub("{$subInfo['shadowrocket']}","shadowrocket://add/sub://")><i class="material-icons icon-sm">send</i> 一键导入 Shadowrocket</a>
+                                                    .
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                </p>
+                                                <p>
+                                                    3、导入后启动连接即可
+                                                </p>
+                                                {if $user->class == 0}
+                                                    <p>
+                                                        <span class="icon icon-lg text-white">error</span>
+                                                        <strong>非VIP用户不提供已购IOS账户</strong>
+                                                    </p>
+                                                {/if}
+
+                                                {if array_key_exists('iOS',$config['userCenterClient'])}
+                                                    {if count($config['userCenterClient']['iOS']) != 0}
+                                                        {printClient items=$config['userCenterClient']['iOS']}
+                                                    {/if}
+                                                {/if}
+                                            </div>
+                                            <div class="tab-pane fade" id="sub_center_android">
+                                                {*   <p><span class="icon icon-lg text-white">filter_1</span> Clash for Windows - [ SS/SSR/VMess ]：</p>*}
+                                                <p>
+                                                    1、安装Clash for Android：
+                                                    <a class="btn-dl" target="_blank" href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.1.6/app-arm64-v8a-release.apk"><i class="material-icons icon-sm">cloud_download</i>在线下载</a>
+                                                    <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Android/clash{/if}"><i class="material-icons
+                                                         icon-sm">turned_in_not</i> 图文教程</a>
+                                                <p>Ps:如果下载没速度，请复制链接到迅雷下载</p>
+
+                                                </p>
+                                                <p>
+                                                    2、一键导入配置：
+                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
+                                                    .
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+
+                                                </p>
+                                                <p> 3、导入后启动代理即可</p>
+                                                <p> 提示：如果当中您有任何问题，请查看图文教程。</p>
+                                                {if array_key_exists('Android',$config['userCenterClient'])}
+                                                    {if count($config['userCenterClient']['Android']) != 0}
+                                                        {printClient items=$config['userCenterClient']['Android']}
+                                                    {/if}
+                                                {/if}
+                                            </div>
+                                            <div class="tab-pane fade" id="sub_center_other">
+                                                <p>此处为通用订阅，适用于多种应用的订阅，请注意站点所支持的协议，本处显示的订阅类型不代表站点支持的协议类型.</p>
+                                                <hr/>
+                                                <p><span class="icon icon-lg text-white">filter_1</span> [ Shadowsocks ]：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ss']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>.<a id="general_ss" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=ss","#general_ss","")><i class="material-icons icon-sm">send</i> 拷贝全部节点 URL</a>
+                                                </p>
+                                                <hr/>
+                                                <p><span class="icon icon-lg text-white">filter_2</span> [ ShadowsocksR(R) ]：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>.<a id="general_ssr" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=ssr","#general_ssr","")><i class="material-icons icon-sm">send</i> 拷贝全部节点 URL</a>
+                                                </p>
+                                                <hr/>
+                                                <p><span class="icon icon-lg text-white">filter_3</span> [ V2Ray ]：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['v2ray']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>.<a id="general_v2ray" class="copy-config btn-dl" onclick=Copyconfig("/user/getUserAllURL?type=v2ray","#general_v2ray","")><i class="material-icons icon-sm">send</i> 拷贝全部节点 URL</a>
+                                                </p>
+                                                <hr/>
+                                                <p><span class="icon icon-lg text-white">filter_4</span> [ Trojan ]：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['trojan']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                </p>
+                                                <hr/>
+                                                <p><span class="icon icon-lg text-white">filter_5</span> [ Clash ]：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                </p>
+                                            </div>
+
+                                            <div class="tab-pane fade" id="sub_center_linux">
+                                                <p><span class="icon icon-lg text-white">filter_1</span> Electron SSR - [ SSR ]：</p>
+                                                <p>
+                                                    使用教程：
+                                                    <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Linux/ElectronSSR{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
+                                                </p>
+                                                <p>
+                                                    使用方式：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
+                                                </p>
+                                                {if array_key_exists('Linux',$config['userCenterClient'])}
+                                                    {if count($config['userCenterClient']['Linux']) != 0}
+                                                        {printClient items=$config['userCenterClient']['Linux']}
+                                                    {/if}
+                                                {/if}
+                                            </div>
+                                            <div class="tab-pane fade" id="sub_center_router">
+                                                <p><span class="icon icon-lg text-white">filter_1</span> Koolshare 固件路由器/软路由：</p>
+                                                <p>
+                                                    应用下载：
+                                                    <a class="btn-dl" href="https://github.com/hq450/fancyss_history_package"><i class="material-icons icon-sm">cloud_download</i> FancySS 下载页面</a>
+                                                    .
+                                                    <a class="btn-dl" href="https://github.com/hq450/fancyss_history_package/tree/master/fancyss_X64"><i class="material-icons icon-sm">cloud_download</i> FancySS 历史下载页面下载 V2Ray 插件</a>
+                                                </p>
+                                                <p>
+                                                    使用教程：
+                                                    <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Router/Koolshare{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
+                                                </p>
+                                                <p>
+                                                    使用方式：
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝 SSR 订阅链接</a>
+                                                    .
+                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['v2ray']}"><i class="material-icons icon-sm">send</i> 拷贝 V2Ray 订阅链接</a>
+                                                </p>
+                                                {if array_key_exists('Router',$config['userCenterClient'])}
+                                                    {if count($config['userCenterClient']['Router']) != 0}
+                                                        {printClient items=$config['userCenterClient']['Router']}
+                                                    {/if}
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             <div class="ui-card-wrap">
 
                 <div class="col-xx-12 col-xs-6 col-lg-3">
@@ -228,323 +577,31 @@ table tr td:first-child {
                     </div>
                     </div>
                 <div class="col-xx-12 col-sm-7">
-                    <div class="card quickadd">
+                    <div class="card">
                         <div class="card-main">
-                            <div class="card-inner">
-                                <div class="cardbtn-edit">
-                                    <div class="card-heading"><i class="icon icon-md">phonelink</i> 快速使用</div>
-                                </div>
-                                {*                                <nav class="tab-nav margin-top-no">
-                                                                    <ul class="nav nav-list">
-                                                                        <li class="active">
-                                                                            <a class="" data-toggle="tab" href="#sub_center"><i class="icon icon-lg">info_outline</i>&nbsp;订阅中心</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="" data-toggle="tab" href="#info_center"><i class="icon icon-lg">flight_takeoff</i>&nbsp;连接信息</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </nav>*}
-                                <div class="card-inner">
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade" id="info_center">
-                                            <p>您的链接信息：</p>
-                                            {if URL::SSRCanConnect($user)}
-                                                {$user = URL::getSSRConnectInfo($pre_user)}
-                                                <table class="table">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><strong>端口</strong></td>
-                                                        <td>{$user->port}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>密码</strong></td>
-                                                        <td>{$user->passwd}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义加密</strong></td>
-                                                        <td>{$user->method}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义协议</strong></td>
-                                                        <td>{$user->protocol}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义混淆</strong></td>
-                                                        <td>{$user->obfs}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义混淆参数</strong></td>
-                                                        <td>{$user->obfs_param}</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                                <hr/>
-                                                <p>您好，您目前的 加密方式，混淆或协议 适用于 SSR 客户端，请您选用支持 SSR 的客户端来连接，或者到 <a href="/user/edit">资料编辑</a> 页面修改后再来查看此处。</p>
-                                                <p>同时, ShadowsocksR 单端口多用户的连接不受您设置的影响，您可以在此使用相应的客户端进行连接</p>
-                                            {elseif URL::SSCanConnect($user)}
-                                                {$user = URL::getSSConnectInfo($pre_user)}
-                                                <table class="table">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><strong>端口</strong></td>
-                                                        <td>{$user->port}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>密码</strong></td>
-                                                        <td>{$user->passwd}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义加密</strong></td>
-                                                        <td>{$user->method}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义混淆</strong></td>
-                                                        <td>{$user->obfs}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>自定义混淆参数</strong></td>
-                                                        <td>{$user->obfs_param}</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                                <hr/>
-                                                <p>您好，您目前的 加密方式，混淆或协议 适用于 SS 客户端，请您选用支持 SS 协议的客户端来连接，或者到 <a href="/user/edit">资料编辑</a> 页面修改后再来查看此处。</p>
-                                                <p>同时, Shadowsocks 单端口多用户的连接不受您设置的影响，您可以在此使用相应的客户端进行连接</p>
-                                            {else}
-                                                <p>您的账户连接信息存在异常，请联系管理员</p>
-                                            {/if}
-                                        </div>
-                                        <div class="tab-pane fade active in" id="sub_center">
-                                            <nav class="tab-nav margin-top-no">
-                                                <ul class="nav nav-list">
-                                                    <li class="active">
-                                                        <a class="" data-toggle="tab" href="#sub_center_general"><i class="icon icon-lg">touch_app</i>&nbsp;新手必看</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="" data-toggle="tab" href="#sub_center_windows"><i class="icon icon-lg">desktop_windows</i>&nbsp;Windows</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="" data-toggle="tab" href="#sub_center_mac"><i class="icon icon-lg">laptop_mac</i>&nbsp;macOS</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="" data-toggle="tab" href="#sub_center_ios"><i class="icon icon-lg">phone_iphone</i>&nbsp;iOS</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="" data-toggle="tab" href="#sub_center_android"><i class="icon icon-lg">android</i>&nbsp;Android</a>
-                                                    </li>
-                                                    {*                                                    <li>
-                                                                                                            <a class="" data-toggle="tab" href="#sub_center_linux"><i class="icon icon-lg">devices_other</i>&nbsp;Linux</a>
-                                                                                                        </li>
-                                                                                                        <li>
-                                                                                                            <a class="" data-toggle="tab" href="#sub_center_router"><i class="icon icon-lg">router</i>&nbsp;Router</a>
-                                                                                                        </li>*}
-                                                </ul>
-                                            </nav>
-                                            {function name=printClient items=null}
-                                                {foreach $items as $item}
-                                                    <hr/>
-                                                    <p><span class="icon icon-lg text-white">filter_9_plus</span> {$item['name']} - [ {$item['support']} ]：</p>
-                                                    <p>
-                                                        应用下载：
-                                                        {foreach $item['download_urls'] as $download_url}
-                                                            {if !$download_url@first}.{/if}
-                                                            <a class="btn-dl" href="{$download_url['url']}"><i class="material-icons icon-sm">cloud_download</i> {$download_url['name']}</a>
-                                                        {/foreach}
-                                                    </p>
-                                                    <p>
-                                                        使用教程：
-                                                        <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}{$item['tutorial_url']}{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
-                                                    </p>
-                                                    {if isset($item['description'])}
-                                                        <p>
-                                                            相关说明：
-                                                            {$item['description']}
-                                                        </p>
-                                                    {/if}
-                                                    <p>
-                                                        使用方式：
-                                                        {foreach $item['subscribe_urls'] as $subscribe_url}
-                                                            {if !$subscribe_url@first}.{/if}
-                                                            {$url=$subscribe_url['url']|replace:'%userUrl%':$subInfo['link']}
-                                                            {if $subscribe_url['type'] == 'href'}
-                                                                <a class="btn-dl" href="{$url}"><i class="material-icons icon-sm">send</i> {$subscribe_url['name']}</a>
-                                                            {else}
-                                                                <a class="copy-text btn-dl" data-clipboard-text="{$url}"><i class="material-icons icon-sm">send</i> {$subscribe_url['name']}</a>
-                                                            {/if}
-                                                        {/foreach}
-                                                    </p>
-                                                {/foreach}
-                                            {/function}
-                                            <div class="tab-pane fade active in" id="sub_center_general">
-                                                <p>1.先充值，要买哪种套餐就冲多少</p> <a href="/user/code" class="card-tag tag-green">点我充值</a>
-                                                <p>2.购买套餐，充值完成后得去购买套餐，服务才会生效。</p> <a href="/user/shop" class="card-tag tag-orange">点我购买套餐</a>
-                                                <p>3.下载软件。一键导入配置，启动链接。</p>
-                                            </div>
-                                            <div class="tab-pane fade" id="sub_center_windows">
-                                                {*   <p><span class="icon icon-lg text-white">filter_1</span> Clash for Windows：</p>*}
-                                                <p>
-                                                    1、安装Clash for Windows：
-                                                    <a class="btn-dl" target="_blank" href="https://sabrinathings.lanzous.com/inlYQo5q89c"><i class="material-icons icon-sm">cloud_download</i>在线下载</a>
-                                                    <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Windows/Clash{/if}"><i
-                                                                class="material-icons
-                                                         icon-sm">turned_in_not</i> 图文教程</a>
-                                                </p>
-                                                <p>
-                                                    2、一键导入配置：
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 配置一键导入</a>
-                                                    .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
-
-                                                </p>
-                                                <p> 3、导入后启动系统代理即可</p>
-                                                <p> 提示：如果当中您有任何问题，请查看图文教程。</p>
-                                                {if array_key_exists('Windows',$config['userCenterClient'])}
-                                                    {if count($config['userCenterClient']['Windows']) != 0}
-                                                        {printClient items=$config['userCenterClient']['Windows']}
-                                                    {/if}
-                                                {/if}
-                                            </div>
-                                            <div class="tab-pane fade" id="sub_center_mac">
-                                                {*     <p><span class="icon icon-lg text-white">filter_1</span> ClashXR - [ SS/SSR/VMess ]：</p>*}
-                                                <p>
-                                                    1、安装Clash X for mac：
-                                                    <a class="btn-dl" target="_blank"  href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public"><i class="material-icons icon-sm">cloud_download</i> 在线下载</a>
-                                                    使用指导： <a class="btn-dl" target="_blank" href="/doc/#/Mac/ClashXpro" target="_blank"><i class="material-icons icon-sm">visibility</i> 图文教程</a>
-                                                </p>
-                                                <p>
-                                                    2、一键导入配置：
-
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
-                                                    .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
-
-                                                </p>
-                                                {if array_key_exists('macOS',$config['userCenterClient'])}
-                                                    {if count($config['userCenterClient']['macOS']) != 0}
-                                                        {printClient items=$config['userCenterClient']['macOS']}
-                                                    {/if}
-                                                {/if}
-                                            </div>
-                                            <div class="tab-pane fade" id="sub_center_ios">
-                                                {if $display_ios_class>=0}
-                                                    {if $user->class>=$display_ios_class && $user->get_top_up()>=$display_ios_topup}
-                                                        <div><span class="icon icon-lg text-white">account_box</span> 本站iOS账户：</div>
-                                                        <div class="float-clear">
-                                                            <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" name="input1" readonly value="{$ios_account}" readonly="true">
-                                                            <button class="copy-text btn btn-subscription col-xx-12 col-sm-3 col-lg-2" type="button" data-clipboard-text="{$ios_account}">点击复制</button>
-                                                            <br>
-                                                        </div>
-                                                        <div><span class="icon icon-lg text-white">lock</span> 本站iOS密码：</div>
-                                                        <div class="float-clear">
-                                                            <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" name="input1" readonly value="{$ios_password}" readonly="true">
-                                                            <button class="copy-text btn btn-subscription col-xx-12 col-sm-3 col-lg-2" type="button" data-clipboard-text="{$ios_password}">点击复制</button>
-                                                            <br>
-                                                        </div>
-                                                        <p><span class="icon icon-lg text-white">error</span><strong>禁止将账户分享给他人！</strong></p>
-                                                        <hr/>
-                                                    {/if}
-                                                {/if}
-
-                                                {* <p><span class="icon icon-lg text-white">filter_1</span> Shadowrocket - [ SS/SSR/VMess/Trojan ]：</p>*}
-                                                <p>
-                                                    1、苹果用户先按教程下载好Shadowrocket：
-                                                    <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/iOS/Shadowrocket{/if}"><i
-                                                                class="material-icons
-                                                            icon-sm">turned_in_not</i> 图文教程</a>
-                                                </p>
-                                                <p>
-                                                    2、一键导入小火箭：
-                                                    <a class="btn-dl" onclick=AddSub("{$subInfo['shadowrocket']}","shadowrocket://add/sub://")><i class="material-icons icon-sm">send</i> 一键导入 Shadowrocket</a>
-                                                    .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
-                                                </p>
-                                                <p>
-                                                    3、导入后启动连接即可
-                                                </p>
-                                                {if $user->class == 0}
-                                                    <p>
-                                                        <span class="icon icon-lg text-white">error</span>
-                                                        <strong>非VIP用户不提供已购IOS账户</strong>
-                                                    </p>
-                                                {/if}
-
-                                                {if array_key_exists('iOS',$config['userCenterClient'])}
-                                                    {if count($config['userCenterClient']['iOS']) != 0}
-                                                        {printClient items=$config['userCenterClient']['iOS']}
-                                                    {/if}
-                                                {/if}
-                                            </div>
-                                            <div class="tab-pane fade" id="sub_center_android">
-                                                {*   <p><span class="icon icon-lg text-white">filter_1</span> Clash for Windows - [ SS/SSR/VMess ]：</p>*}
-                                                <p>
-                                                    1、安装Clash for Android：
-                                                    <a class="btn-dl" target="_blank" href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.1.6/app-arm64-v8a-release.apk"><i class="material-icons icon-sm">cloud_download</i>在线下载</a>
-                                                    <a class="btn-dl" target="_blank" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Android/clash{/if}"><i class="material-icons
-                                                         icon-sm">turned_in_not</i> 图文教程</a>
-                                                <p>Ps:如果下载没速度，请复制链接到迅雷下载</p>
-
-                                                </p>
-                                                <p>
-                                                    2、一键导入配置：
-                                                    <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clash'])}"><i class="material-icons icon-sm">send</i> 一键导入Clash</a>
-                                                    .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['clash']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
-
-                                                </p>
-                                                <p> 3、导入后启动代理即可</p>
-                                                <p> 提示：如果当中您有任何问题，请查看图文教程。</p>
-                                                {if array_key_exists('Android',$config['userCenterClient'])}
-                                                    {if count($config['userCenterClient']['Android']) != 0}
-                                                        {printClient items=$config['userCenterClient']['Android']}
-                                                    {/if}
-                                                {/if}
-                                            </div>
-                                            <div class="tab-pane fade" id="sub_center_linux">
-                                                <p><span class="icon icon-lg text-white">filter_1</span> Electron SSR - [ SSR ]：</p>
-                                                <p>
-                                                    使用教程：
-                                                    <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Linux/ElectronSSR{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
-                                                </p>
-                                                <p>
-                                                    使用方式：
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
-                                                </p>
-                                                {if array_key_exists('Linux',$config['userCenterClient'])}
-                                                    {if count($config['userCenterClient']['Linux']) != 0}
-                                                        {printClient items=$config['userCenterClient']['Linux']}
-                                                    {/if}
-                                                {/if}
-                                            </div>
-                                            <div class="tab-pane fade" id="sub_center_router">
-                                                <p><span class="icon icon-lg text-white">filter_1</span> Koolshare 固件路由器/软路由：</p>
-                                                <p>
-                                                    应用下载：
-                                                    <a class="btn-dl" href="https://github.com/hq450/fancyss_history_package"><i class="material-icons icon-sm">cloud_download</i> FancySS 下载页面</a>
-                                                    .
-                                                    <a class="btn-dl" href="https://github.com/hq450/fancyss_history_package/tree/master/fancyss_X64"><i class="material-icons icon-sm">cloud_download</i> FancySS 历史下载页面下载 V2Ray 插件</a>
-                                                </p>
-                                                <p>
-                                                    使用教程：
-                                                    <a class="btn-dl" href="{if $config['use_this_doc'] === false}/user/tutorial{else}/doc/#/Router/Koolshare{/if}"><i class="material-icons icon-sm">turned_in_not</i> 点击查看</a>
-                                                </p>
-                                                <p>
-                                                    使用方式：
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝 SSR 订阅链接</a>
-                                                    .
-                                                    <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['v2ray']}"><i class="material-icons icon-sm">send</i> 拷贝 V2Ray 订阅链接</a>
-                                                </p>
-                                                {if array_key_exists('Router',$config['userCenterClient'])}
-                                                    {if count($config['userCenterClient']['Router']) != 0}
-                                                        {printClient items=$config['userCenterClient']['Router']}
-                                                    {/if}
-                                                {/if}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="card-inner margin-bottom-no">
+                                <p class="card-heading"><i class="icon icon-md">notifications_active</i> 公告栏</p>
+                                {if $ann != null}
+                                    <p>{$ann->content}</p>
+                                    <br/>
+                                    <strong>查看所有公告请<a href="/user/announcement">点击这里</a></strong>
+                                {/if}
+                                {if $config['enable_admin_contact'] === true}
+                                    <p class="card-heading">管理员联系方式</p>
+                                    {if $config['admin_contact1']!=''}
+                                        <p>{$config['admin_contact1']}</p>
+                                    {/if}
+                                    {if $config['admin_contact2']!=''}
+                                        <p>{$config['admin_contact2']}</p>
+                                    {/if}
+                                    {if $config['admin_contact3']!=''}
+                                        <p>{$config['admin_contact3']}</p>
+                                    {/if}
+                                {/if}
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -570,31 +627,6 @@ table tr td:first-child {
                         </div>
                     </div>
                 </div>
-                <div class="col-xx-12 col-sm-6">
-                    <div class="card">
-                        <div class="card-main">
-                            <div class="card-inner margin-bottom-no">
-                                <p class="card-heading"><i class="icon icon-md">notifications_active</i> 公告栏</p>
-                                {if $ann != null}
-                                    <p>{$ann->content}</p>
-                                    <br/>
-                                    <strong>查看所有公告请<a href="/user/announcement">点击这里</a></strong>
-                                {/if}
-                                {if $config['enable_admin_contact'] === true}
-                                    <p class="card-heading">管理员联系方式</p>
-                                    {if $config['admin_contact1']!=''}
-                                        <p>{$config['admin_contact1']}</p>
-                                    {/if}
-                                    {if $config['admin_contact2']!=''}
-                                        <p>{$config['admin_contact2']}</p>
-                                    {/if}
-                                    {if $config['admin_contact3']!=''}
-                                        <p>{$config['admin_contact3']}</p>
-                                    {/if}
-                                {/if}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             {include file='dialog.tpl'}

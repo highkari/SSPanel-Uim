@@ -278,14 +278,19 @@ class UserController extends BaseController
 
             if ($user->ref_by != '' && $user->ref_by != 0 && $user->ref_by != null) {
                 $gift_user = User::where('id', '=', $user->ref_by)->first();
-                $gift_user->money += ($codeq->number * ($_ENV['code_payback'] / 100));
+                $to = $_ENV['code_payback_' . $gift_user->id];
+                $fanli = $_ENV['code_payback'];
+                if ($to != null) {
+                    $fanli = $to;
+                }
+                $gift_user->money += ($codeq->number * ($fanli / 100));
                 $gift_user->save();
 
                 $Payback = new Payback();
                 $Payback->total = $codeq->number;
                 $Payback->userid = $this->user->id;
                 $Payback->ref_by = $this->user->ref_by;
-                $Payback->ref_get = $codeq->number * ($_ENV['code_payback'] / 100);
+                $Payback->ref_get = $codeq->number * ($fanli / 100);
                 $Payback->datetime = time();
                 $Payback->save();
             }
@@ -523,6 +528,11 @@ class UserController extends BaseController
         if (!$paybacks_sum = Payback::where('ref_by', $this->user->id)->sum('ref_get')) {
             $paybacks_sum = 0;
         }
+        $to = $_ENV['code_payback_' . $this->user->id];
+        $fanli = $_ENV['code_payback'];
+        if ($to != null) {
+            $fanli = $to;
+        }
         $paybacks->setPath('/user/invite');
         $render = Tools::paginate_render($paybacks);
         return $this->view()
@@ -530,6 +540,7 @@ class UserController extends BaseController
             ->assign('paybacks', $paybacks)
             ->assign('paybacks_sum', $paybacks_sum)
             ->assign('render', $render)
+            ->assign('fanli', $fanli)
             ->display('user/invite.tpl');
     }
 

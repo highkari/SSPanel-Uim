@@ -71,13 +71,18 @@ abstract class AbstractPayment
 
         if ($user->ref_by >= 1) {
             $gift_user = User::where('id', '=', $user->ref_by)->first();
-            $gift_user->money += ($codeq->number * ($_ENV['code_payback'] / 100));
+            $to = $_ENV['code_payback_' . $gift_user->id];
+            $fanli = $_ENV['code_payback'];
+            if ($to != null) {
+                $fanli = $to;
+            }
+            $gift_user->money += ($codeq->number * ($fanli / 100));
             $gift_user->save();
             $Payback = new Payback();
             $Payback->total = $codeq->number;
             $Payback->userid = $user->id;
             $Payback->ref_by = $user->ref_by;
-            $Payback->ref_get = $codeq->number * ($_ENV['code_payback'] / 100);
+            $Payback->ref_get = $codeq->number * ($fanli / 100);
             $Payback->datetime = time();
             $Payback->save();
         }

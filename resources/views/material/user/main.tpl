@@ -78,9 +78,9 @@
                         <li>
                             <a href="/user/edit"><i class="icon icon-lg">sync_problem</i>&nbsp;资料编辑</a>
                         </li>
-                        <li>
+                     {*   <li>
                             <a href="/user/trafficlog"><i class="icon icon-lg">hourglass_empty</i>&nbsp;流量记录</a>
-                        </li>
+                        </li>*}
                     {if $config['subscribeLog']===true && $config['subscribeLog_show']===true}
                         <li>
                             <a href="/user/subscribe_log"><i class="icon icon-lg">important_devices</i>&nbsp;订阅记录</a>
@@ -101,7 +101,7 @@
                             <a href="/user/node"><i class="icon icon-lg">airplanemode_active</i>&nbsp;节点列表</a>
                         </li>
                         <li>
-                            <a href="/user/lookingglass"><i class="icon icon-lg">visibility</i>&nbsp;延迟检测</a>
+                            <a target="_blank" href="/monitor"><i class="icon icon-lg">visibility</i>&nbsp;节点状态</a>
                         </li>
                         <li>
                             <a href="/user/announcement"><i class="icon icon-lg">announcement</i>&nbsp;网站公告</a>
