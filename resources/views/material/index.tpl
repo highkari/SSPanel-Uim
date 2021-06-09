@@ -6,8 +6,8 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
-<meta name="description" content="致力于为用户提供高速稳定的高性价比网络中继服务">
-<meta name="keywords" content="">
+<meta name="description" content="致力于为用户提供高速稳定的网络中继服务">
+<meta name="keywords" content="免费VPN,小火箭,游戏加速,Netflix原生">
 <title>{$config["appName"]}</title>
 <link rel="shortcut icon" href="/">
 <link rel="stylesheet" href="/theme/7colorblog.com/theme-two/static/css/prism.css">

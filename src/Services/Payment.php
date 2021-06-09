@@ -16,7 +16,8 @@ use App\Services\Gateway\{
     SPay,
     PAYJS,
     YftPay,
-    BitPayX
+    BitPayX,
+    THeadPay,
 };
 
 class Payment
@@ -39,6 +40,8 @@ class Payment
                 return new YftPay();
             case ('bitpayx'):
                 return new BitPayX($_ENV['bitpay_secret']);
+            case ('theadpay'):
+                return new THeadPay();
             default:
                 return null;
         }
