@@ -2,7 +2,7 @@
 
 ## 下载程序
 
-程序下载：https://sabrinathings.lanzous.com/iJFGQm7l21i
+程序下载：https://wws.lanzoui.com/iz28Xpa0pfa
 
 ## 导入节点
 
