@@ -63,7 +63,12 @@
                                     <span>{$shop->price}</span>
                                 </div>
                                 <div class="shop-tat">
-                                    <span>{$shop->bandwidth()}</span> / <span>{$shop->class_expire()}</span>
+                                    <span>{$shop->bandwidth()}</span> /
+                                    {if strpos($shop->name,'不限时') !== false}
+                                        <span>NA</span>
+                                    {else}
+                                    <span>{$shop->class_expire()}</span>
+                                    {/if}
                                 </div>
                                 <div class="shop-cube">
                                     <div>

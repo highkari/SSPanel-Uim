@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tonyzou
- * Date: 2018/9/24
- * Time: 下午9:24
- */
 
 namespace App\Services\Gateway;
 
@@ -37,12 +31,6 @@ class THeadPay extends AbstractPayment
                 'msg' => '订单金额错误：' . $amount
             ]);
         }
-        if ($amount < 5) {
-            return $response->withJson([
-                'ret' => 0,
-                'msg' => '充值金额必须大于5元。'
-            ]);
-        }
 
         $pl = new Paylist();
         $pl->userid     = $user->id;
@@ -55,11 +43,13 @@ class THeadPay extends AbstractPayment
                 'trade_no'      => $pl->tradeno,
                 'total_fee'     => $pl->total*100,
                 'notify_url'    => rtrim($_ENV['baseUrl'], '/') . '/payment/notify',
+                'return_url'    => rtrim($_ENV['baseUrl'], '/') . '/payment/notify',
+                'return_url'    => rtrim($_ENV['baseUrl'], '/') . '/user/payment/return?out_trade_no=' . $pl->tradeno,
             ]);
 
             return $response->withJson([
                 'ret'       => 1,
-                'qrcode'    => $res['data'],
+                'qrcode'    => $res['code_url'],
                 'amount'    => $pl->total,
                 'pid'       => $pl->tradeno,
             ]);

@@ -64,6 +64,232 @@
 </div>
 </div>
 </div>
+<section id="purchase" class="bg-gr" style="padding-top: 2px;padding-bottom: 2px;">
+    <style>
+        .pricing {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+            background-color: #fff;
+            border-radius: 3px;
+            border: none;
+            position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .pricing.pricing-highlight .pricing-title {
+            background-color: #6777ef;
+            color: #fff;
+        }
+
+        .pricing.pricing-highlight .pricing-cta a {
+            background-color: #6777ef;
+            color: #fff;
+        }
+
+        .pricing.pricing-highlight .pricing-cta a:hover {
+            background-color: #394eea !important;
+        }
+
+        .pricing .pricing-padding {
+            padding: 40px;
+        }
+
+        .pricing .pricing-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            background-color: #f3f6f8;
+            color: #6777ef;
+            border-radius: 0 0 3px 3px;
+            display: inline-block;
+            padding: 5px 15px;
+        }
+
+        .pricing .pricing-price {
+            margin-bottom: 45px;
+            color: #6c757d
+        }
+
+        .pricing .pricing-price div:first-child {
+            font-weight: 600;
+            font-size: 50px;
+        }
+
+        .pricing .pricing-details {
+            text-align: left;
+            display: inline-block;
+            color: #6c757d;
+        }
+
+        .pricing .pricing-details .pricing-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .pricing .pricing-details .pricing-item .pricing-item-icon {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: #63ed7a;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .pricing .pricing-details .pricing-item .pricing-item-icon i {
+            font-size: 11px;
+        }
+
+        .pricing .pricing-cta {
+            margin-top: 20px;
+        }
+
+        .pricing .pricing-cta a {
+            display: block;
+            padding: 20px 40px;
+            background-color: #f3f6f8;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .pricing .pricing-cta a .fas,
+        .pricing .pricing-cta a .far,
+        .pricing .pricing-cta a .fab,
+        .pricing .pricing-cta a .fal,
+        .pricing .pricing-cta a .ion {
+            margin-left: 5px;
+        }
+
+        .pricing .pricing-cta a:hover {
+            background-color: #e3eaef;
+        }
+    </style>
+    <div class="container">
+
+        <div class="row mt-5">
+            <div class="col-12 col-md-4 col-lg-4">
+                <div class="pricing">
+                    <div class="pricing-title">
+                        5元特惠轻量版
+                    </div>
+                    <div class="pricing-padding">
+                        <div class="pricing-price">
+                            <div>¥5</div>
+                            <div>每月</div>
+                        </div>
+                        <div class="pricing-details">
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">50GB 使用流量/月</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">不限制在线客户端</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon text-white" style="background: #98a6ad"><i class="fas fa-times"></i></div>
+                                <div class="pricing-item-label text-muted"><del>工单技术支持</del></div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">国际标准节点</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon text-white" style="background: #98a6ad"><i class="fas fa-times"></i></div>
+                                <div class="pricing-item-label text-muted"><del>IPLC专线节点</del></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-cta go-to-buy-page">
+                        <a href="/user/node">订阅 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4">
+                <div class="pricing">
+                    <div class="pricing-title">
+                        标准版
+                    </div>
+                    <div class="pricing-padding">
+                        <div class="pricing-price">
+                            <div>¥10</div>
+                            <div>每月</div>
+                        </div>
+                        <div class="pricing-details">
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">150GB 使用流量/月</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">不限制在线客户端</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">24/7 在线技术支持</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">cn2加速节点</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">IPLC专线节点</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-cta go-to-buy-page">
+                        <a href="/user/node">订阅 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4">
+                <div class="pricing">
+                    <div class="pricing-title">
+                        不限时套餐
+                    </div>
+                    <div class="pricing-padding">
+                        <div class="pricing-price">
+                            <div>¥88</div>
+                            <div>不限时流量套餐</div>
+                        </div>
+                        <div class="pricing-details">
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">1000GB流量</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">不限制在线客户端</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">24/7 在线技术支持</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">cn2加速节点</div>
+                            </div>
+                            <div class="pricing-item">
+                                <div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
+                                <div class="pricing-item-label">IPLC专线节点</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-cta go-to-buy-page">
+                        <a href="/user/node">订阅 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="callout container">
 <div class="row">
 <div class="col-md-6 col-12 mb-4 mb-lg-0">
@@ -237,251 +463,7 @@
 </div>
 </div>
 </section>
-<section id="purchase" class="bg-gr">
-<style>
-      .pricing {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
-        background-color: #fff;
-        border-radius: 3px;
-        border: none;
-        position: relative;
-        margin-bottom: 30px;
-        text-align: center;
-      }
 
-      .pricing.pricing-highlight .pricing-title {
-        background-color: #6777ef;
-        color: #fff;
-      }
-
-      .pricing.pricing-highlight .pricing-cta a {
-        background-color: #6777ef;
-        color: #fff;
-      }
-
-      .pricing.pricing-highlight .pricing-cta a:hover {
-        background-color: #394eea !important;
-      }
-
-      .pricing .pricing-padding {
-        padding: 40px;
-      }
-
-      .pricing .pricing-title {
-        font-size: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        background-color: #f3f6f8;
-        color: #6777ef;
-        border-radius: 0 0 3px 3px;
-        display: inline-block;
-        padding: 5px 15px;
-      }
-
-      .pricing .pricing-price {
-        margin-bottom: 45px;
-        color: #6c757d
-      }
-
-      .pricing .pricing-price div:first-child {
-        font-weight: 600;
-        font-size: 50px;
-      }
-
-      .pricing .pricing-details {
-        text-align: left;
-        display: inline-block;
-        color: #6c757d;
-      }
-
-      .pricing .pricing-details .pricing-item {
-        display: flex;
-        margin-bottom: 15px;
-      }
-
-      .pricing .pricing-details .pricing-item .pricing-item-icon {
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        border-radius: 50%;
-        text-align: center;
-        background-color: #63ed7a;
-        color: #fff;
-        margin-right: 10px;
-      }
-
-      .pricing .pricing-details .pricing-item .pricing-item-icon i {
-        font-size: 11px;
-      }
-
-      .pricing .pricing-cta {
-        margin-top: 20px;
-      }
-
-      .pricing .pricing-cta a {
-        display: block;
-        padding: 20px 40px;
-        background-color: #f3f6f8;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-        border-radius: 0 0 3px 3px;
-      }
-
-      .pricing .pricing-cta a .fas,
-      .pricing .pricing-cta a .far,
-      .pricing .pricing-cta a .fab,
-      .pricing .pricing-cta a .fal,
-      .pricing .pricing-cta a .ion {
-        margin-left: 5px;
-      }
-
-      .pricing .pricing-cta a:hover {
-        background-color: #e3eaef;
-      }
-    </style>
-<div class="container">
-<div class="row">
-<div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-12 text-center">
-<h2 class="mt-3 text-white">出色的体验，意想不到的价格</h2>
-<p class="lead" style="color: rgba(255, 255, 255, 0.5);">
-不要把宝贵的时间，浪费在等待上。即刻开启全球网络中继服务，在任何时间任何地点访问全球互联网。
-</p>
-</div>
-</div>
-<div class="row mt-5">
-<div class="col-12 col-md-4 col-lg-4">
-<div class="pricing">
-<div class="pricing-title">
-标准版
-</div>
-<div class="pricing-padding">
-<div class="pricing-price">
-<div>¥10</div>
-<div>每月</div>
-</div>
-<div class="pricing-details">
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">150GB 使用流量/月</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">不限制在线客户端</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">工单技术支持</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">国际标准节点</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon text-white" style="background: #98a6ad"><i class="fas fa-times"></i></div>
-<div class="pricing-item-label"><del>海外回国节点</del></div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon text-white" style="background: #98a6ad"><i class="fas fa-times"></i></div>
-<div class="pricing-item-label text-muted"><del>IPLC专线节点</del></div>
-</div>
-</div>
-</div>
-<div class="pricing-cta go-to-buy-page">
-<a href="/user/node">订阅 <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-</div>
-<div class="col-12 col-md-4 col-lg-4">
-<div class="pricing">
-<div class="pricing-title">
-高级版
-</div>
-<div class="pricing-padding">
-<div class="pricing-price">
- <div>¥25</div>
-<div>每月</div>
-</div>
-<div class="pricing-details">
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">300GB 使用流量/月</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">不限制在线客户端</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">24/7 在线技术支持</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">cn2加速节点</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">海外回国节点</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">IPLC专线节点</div>
-</div>
-</div>
-</div>
-<div class="pricing-cta go-to-buy-page">
-<a href="/user/node">订阅 <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-</div>
-<div class="col-12 col-md-4 col-lg-4">
-<div class="pricing">
-<div class="pricing-title">
-标准版【折扣】
-</div>
-<div class="pricing-padding">
-<div class="pricing-price">
-<div>¥99</div>
-<div>年付，低至8.2/月</div>
-</div>
-<div class="pricing-details">
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">1800GB流量</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">不限制在线客户端</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">24/7 在线技术支持</div>
-</div>
-<div class="pricing-item">
-<div class="pricing-item-icon" style="background:#6574f7"><i class="fas fa-check"></i></div>
-<div class="pricing-item-label">cn2加速节点</div>
-</div>
-<div class="pricing-item">
-    <div class="pricing-item-icon text-white" style="background: #98a6ad"><i class="fas fa-times"></i></div>
-    <div class="pricing-item-label"><del>海外回国节点</del></div>
-</div>
-<div class="pricing-item">
-    <div class="pricing-item-icon text-white" style="background: #98a6ad"><i class="fas fa-times"></i></div>
-    <div class="pricing-item-label text-muted"><del>IPLC专线节点</del></div>
-</div>
-</div>
-</div>
-<div class="pricing-cta go-to-buy-page">
-<a href="/user/node">订阅 <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id="try" class="section-dark">
 <div class="container ">
  <div class="swiper-container">
